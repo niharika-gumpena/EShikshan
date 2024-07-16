@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Page</title>
+    <link rel="stylesheet" href="student.css">
+</head>
+<body>
+    <div class="header">
+        <img src="eshikshan.jpg" alt="E-Shikshan Logo" class="logo">
+        <h1 id="studentName">Welcome Username!!</h1>
+        <a href="/logout">Logout</a>
+    </div>
+    <div class="content">
+        <form action="/search_by_date" method="post" id="search_form">
+            <label for="search_date">Search by date</label>
+            <input type="date" id="search_date" name="search_date" required>
+            <input type="submit" value="Search" id="search">
+        </form>
+        <div class="courses">
+            <button onclick="navigateToSubject('Full Stack Development')">Full Stack</button>
+            <button onclick="navigateToSubject('Data Visualisation')">Data Visualisation</button>
+            <button onclick="navigateToSubject('Computer Networks')">Computer Networks</button>
+            <button onclick="navigateToSubject('Data Warehouse and Data Mining')">Data Warehouse & Data Mining</button>
+            <button onclick="navigateToSubject('Employability Skills')">Employability Skills</button>
+        </div>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        let heading = document.getElementById("studentName");
+        heading.innerHTML = `Welcome ${username}!!`;
+
+        function navigateToSubject(subject) {
+            window.location.href = `/subject.html?subject=${encodeURIComponent(subject)}`;
+        }
+    </script>
+</body>
+</html>

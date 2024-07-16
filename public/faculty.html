@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Page</title>
+    <link rel="stylesheet" href="faculty.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <img src="eshikshan.jpg" alt="E-Shikshan Logo" class="logo">
+            <h1>Welcome, <span id="username"></span>!!</h1>
+            <a href="/logout">Logout</a>
+        </div>
+        <hr/>
+
+        <div class="content">
+            <form id="announce" action="/faculty.html" method="post">
+                <h2>Announce to class</h2>
+                <input type="hidden" name="date" id="title">
+                <input type="hidden" name="faculty_username" id="faculty_username">
+                <textarea name="content" id="content" placeholder="Enter the announcement" rows="10" cols="60"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+
+            <form id="uploadForm" enctype="multipart/form-data" action="/upload_file" method="POST">
+                <h2>Upload PDF</h2>
+                <input type="hidden" name="faculty_username" id="faculty_username_upload">
+                <input type="file" name="file" accept="application/pdf" id="file" required />
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        document.getElementById('username').textContent = username;
+        document.querySelector("#faculty_username").value = username;
+        document.querySelector("#faculty_username_upload").value = username;
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+/* General Styles */
+body {
+   background: linear-gradient(109.5deg, #96bcfa, #f0d1e1);
+   min-height: 100vh;
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/* Subject Page Styles */
+.subject-page {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+}
+
+h1 {
+   text-align: center;
+   font-size: 45px;
+   margin-bottom: 30px; /* Adjust spacing as needed */
+}
+
+.subject-box {
+   background-color: #fff;
+   padding: 25px 40px;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   text-align: center;
+   margin-top: 10px;
+   max-width: 400px; /* Adjust max width as needed */
+   width: 100%; /* Ensure box takes full width */
+   height: 200px; /* Adjust height as needed */
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+form {
+   display: block;
+   margin-bottom: 10px;
+}
+
+#updates,
+#materials {
+   display: block;
+   margin: 10px auto;
+   padding: 15px 0; /* Adjust padding and remove horizontal padding to make buttons full width */
+   width: 100%; /* Make buttons full width */
+   font-size: 24px;
+   border-radius: 6px;
+   background-color: #007bff;
+   color: #fff;
+   border: none;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+#updates:hover,
+#materials:hover {
+   background-color: #06e506;
+}

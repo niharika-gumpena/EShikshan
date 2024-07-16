@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eShikshan - Online Classroom App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="landing-page">
+        <div class="heading-info">
+            <img src="eshikshan.jpg" alt="eshikshan Logo">
+            <h1>E-SHIKSHAN</h1>
+        </div>
+        <div class="login-boxes">
+            <div class="login-box student-login">
+                <h2>Student Login</h2>
+                <form action="/student_submit" method="post">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                    <p class="footer-text"><a href="#">Forgot Password?</a></p>
+                </form>
+            </div>
+            <div class="login-box faculty-login">
+                <h2>Faculty Login</h2>
+                <form action="/faculty_submit" method="post">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                    <p class="footer-text"><a href="#">Forgot Password?</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

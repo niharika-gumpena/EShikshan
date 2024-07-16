@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Page</title>
+    <link rel="stylesheet" href="subject.css">
+</head>
+<body>
+    <div class="subject-page">
+        <h1></h1>
+        <div class="subject-box">
+            <form action="/course_materials" method="post">
+                <input type="submit" value="Course Materials" id="materials">
+                <input type="hidden" name="subject" id="subjectInput_cm">
+            </form>
+            <form action="/display_updates" method="post">
+                <input type="hidden" name="subject" id="subjectInput_du">
+                <input type="submit" value="Daily Updates" id="updates">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const subject = urlParams.get('subject');
+        let heading = document.querySelector("h1");
+        heading.innerHTML = subject;
+        document.querySelector("#subjectInput_du").value = subject;
+        document.querySelector("#subjectInput_cm").value = subject;
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+body {
+    background: linear-gradient(109.5deg, #96bcfa, #f0d1e1);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #f0f0f0; /* Light gray background */
+    position: fixed;
+    top: 0;
+}
+
+.header img.logo {
+    margin-top: -10px;
+    height: 100%; /* Match the image height to the header height */
+    height: 50px;
+    width: auto;
+    margin-right: 20px; /* Adds space between the image and the heading */
+}
+
+.header h1 {
+    text-align: center;
+    font-size: 36px;
+    margin: 0;
+    width: 100%;
+}
+
+.header .logout {
+    font-size: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.header .logout:hover {
+    text-decoration: underline;
+}
+
+.content {
+    text-align: center;
+    margin-top: 0px; /* Adjusted margin-top */
+}
+
+#search_form {
+    margin-bottom: 20px;
+}
+
+#search_date {
+    font-size: 20px; /* Increased size */
+    padding: 12px; /* Increased padding */
+    border-radius: 8px;
+}
+
+#search {
+    font-size: 18px;
+    padding: 12px 24px; /* Increased padding */
+    border-radius: 8px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#search:hover {
+    background-color: #2bad11;
+}
+
+.courses {
+    margin-top: 50px; /* Adjusted margin-top */
+    display: flex;
+    flex-direction: column; /* Display buttons vertically */
+    gap: 18px; /* Adjusted spacing between buttons */
+}
+
+.courses button {
+    width: 320px; /* Increased width for uniformity */
+    padding: 16px; /* Increased padding */
+    font-size: 18px;
+  
+    border-radius: 8px;
+    background-color: #fff; /* White background */
+    
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.courses button:hover {
+    background-color: #007bff;
+    color: #fff;
+}

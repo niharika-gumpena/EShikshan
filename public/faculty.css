@@ -1,0 +1,123 @@
+/* General Styles */
+body {
+    background: linear-gradient(109.5deg, #96bcfa, #f0d1e1);
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+}
+
+/* Navigation Bar Styles */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #f0f0f0; /* Light gray background */
+    position: fixed;
+    top: 0;
+}
+
+.nav-bar img.logo {
+    margin-top: -10px;
+    height: 100%; /* Match the image height to the header height */
+    height: 50px;
+    width: auto;
+    margin-right: 20px; /* Adds space between the image and the heading */
+}
+
+.nav-bar h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 36px;
+    width: 100%;
+}
+
+.nav-bar a {
+    margin: 10px auto;
+    font-size: 18px;
+    color: #007bffde;
+    text-decoration: none;
+    transition: color 0.3s;
+    padding-right: 10px;
+}
+
+.nav-bar a:hover {
+    color: #0056b3;
+}
+
+/* Content Styles */
+.content {
+    text-align: center;
+    margin-top: 20px auto; /* Adjust as needed */
+
+}
+
+form {
+    align-items: center;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form h2 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 0px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+textarea::placeholder {
+    padding-top: 10px; /* Adjust padding-top to move placeholder text down */
+    font-size: 18px; /* Adjust placeholder font size if needed */
+    padding-left: 10px;
+    color: #999; /* Adjust placeholder text color */
+}
+
+input[type="file"] {
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #00b303;
+}

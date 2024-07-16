@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search by Date</title>
+  <style>
+    body {
+      background-image: linear-gradient(109.5deg, #96bcfa, #f0d1e1);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: white;
+      padding: 10px ;
+      height: 40px; /* Fixed height for header */
+     
+    }
+
+
+    .logo {
+      height: 40px; /* Adjust the height of the logo */
+      width: auto;
+      margin-right: 20px; /* Space between logo and heading */
+      object-fit: contain;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 30px;
+      color: #333;
+      text-align: center;
+      flex-grow: 1; /* Ensure the heading takes up space and is centered */
+    }
+
+    .logout {
+      font-size: 20px;
+      text-decoration: none; /* Remove underline */
+      color: #3169d1;
+      padding-left: 20px; /* Add some space from the heading */
+
+    }
+
+  .logout:hover {
+    color: #100076; /* Change text color on hover */
+}
+
+    .content {
+      padding: 3px 20px; /* Adjust padding here */
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+      padding-top: 0px;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    table {
+      width: 60%;
+      border-collapse: collapse;
+      margin: 20px auto;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo-container">
+      <img src="eshikshan.jpg" alt="E-Shikshan Logo" class="logo">
+    </div>
+    <h1>Search Results for <%= search_date %></h1>
+    <a href="/logout" class="logout">Logout</a>
+  </div>
+
+  <div class="content">
+    <h2>Notes</h2>
+    <% if (notes.length > 0) { %>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Content</th>
+        </tr>
+        <% notes.forEach(note => { %>
+          <tr>
+            <td><%= note.date %></td>
+            <td><%= note.content %></td>
+          </tr>
+        <% }) %>
+      </table>
+    <% } else { %>
+      <p>No notes found for this date.</p>
+    <% } %>
+
+    <h2>Files</h2>
+    <% if (files.length > 0) { %>
+      <table>
+        <tr>
+          <th>Original Name</th>
+          <th>Upload Date</th>
+          <th>Download</th>
+        </tr>
+        <% files.forEach(file => { %>
+          <tr>
+            <td><%= file.originalName %></td>
+            <td><%= new Date(file.uploadDate).toISOString().split('T')[0] %></td>
+            <td><a href="/download/<%= file._id %>">Download</a></td>
+          </tr>
+        <% }) %>
+      </table>
+    <% } else { %>
+      <p>No files found for this date.</p>
+    <% } %>
+  </div>
+</body>
+</html>

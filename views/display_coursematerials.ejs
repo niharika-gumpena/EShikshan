@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Materials for <%= subject %></title>
+    <style>
+        body {
+            background-image: linear-gradient(109.5deg, #96bcfa, #f0d1e1);
+            font-family: Arial, sans-serif; /* Optional: Set a font-family */
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            padding: 10px;
+            height: 40px; /* Fixed height for header */
+        }
+
+        .logo {
+            height: 40px; /* Adjust the height of the logo */
+            width: auto;
+            margin-right: 20px; /* Space between logo and heading */
+            object-fit: contain;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 30px;
+            color: #333;
+            text-align: center;
+            flex-grow: 1; /* Ensure the heading takes up space and is centered */
+        }
+
+        .logout {
+            font-size: 20px;
+            text-decoration: none; /* Remove underline */
+            color: #3169d1;
+            padding-right: 5px; /* Add some space from the heading */
+        }
+
+        .logout:hover {
+            color: #100076; /* Change text color on hover */
+        }
+
+        table {
+            width: 60%; /* Adjust the width as needed */
+            border-collapse: collapse;
+            margin: 20px auto; /* Center the table horizontally with top margin */
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+            background-color: white; /* Set the background color to white */
+        }
+
+        h1 {
+            text-align: center; /* Center align the text */
+            font-size: 36px; /* Set the font size */
+            background-color: #f0f0f0; /* Light gray background */
+            padding: 10px 0; /* Optional: Add padding to the top and bottom */
+            margin: -10px;
+        }
+
+        h2, p {
+            text-align: center; /* Center align headings and paragraphs */
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="logo-container">
+        <img src="eshikshan.jpg" alt="E-Shikshan Logo" class="logo">
+    </div>
+    <h1>Course Materials for <%= subject %></h1>
+    <a href="/logout" class="logout">Logout</a>
+</div>
+
+<div class="content">
+    <h2>Files</h2>
+    <% if (files.length > 0) { %>
+    <table>
+        <tr>
+            <th>Original Name</th>
+            <th>Upload Date</th>
+            <th>Download</th>
+        </tr>
+        <% files.forEach(file => { %>
+        <tr>
+            <td><%= file.originalName %></td>
+            <td><%= file.uploadDate %></td>
+            <td><a href="<%= file.downloadLink %>">Download</a></td>
+        </tr>
+        <% }) %>
+    </table>
+    <% } else { %>
+    <p>No files available for <%= subject %>.</p>
+    <% } %>
+</div>
+
+</body>
+</html>
